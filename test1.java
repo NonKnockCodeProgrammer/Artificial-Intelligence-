@@ -1,26 +1,31 @@
-package test2;
+package demo1;
 
-class math{
-	int temp;
-	public int  div(int a,int b) throws Exception {
-		try{
-			temp= a/b;
-		}catch(Exception e){
-				throw e;
-		}
-		return temp;
-	}
-}
+import java.util.Scanner;
 
 public class test1 {
 	public static void main(String[] args) {
-		math m = new math();
-		try {
-			System.out.println(m.div(5, 0));
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		
+		int p[] = {2,3,4,5,6,9};
+		Scanner sc = new Scanner(System.in);
+		
+		int num = sc.nextInt();
+		p[p.length-1]=num;
+		System.out.println(p.length);
+		
+		for( int i = 0 ; i <p.length ; i++ ){
+			System.out.print(p[i]+", ");
+		}
+		
+		System.out.println(" \n");
+		
+		for( int i = 0 ; i <p.length-1 ; i++ ){
+			int temp=0;
+			if(p[p.length-1]<p[i]){
+				temp=p[i];
+				p[i]=p[p.length-1];
+				p[p.length-1]=temp;
+			}
+			System.out.print(p[i]+", ");
 		}
 	}
-
 }
